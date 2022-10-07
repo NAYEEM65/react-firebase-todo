@@ -22,7 +22,7 @@ const Login = ({ handleCreateAccout }) => {
         e.preventDefault();
         signInWithEmailAndPassword(auth, email, password)
             .then(() => {
-                navigate('/home'); //home
+                navigate('/'); //home
             })
             .catch((err) => console.log(err.message));
     };
@@ -30,7 +30,7 @@ const Login = ({ handleCreateAccout }) => {
     useEffect(() => {
         auth.onAuthStateChanged((user) => {
             if (user) {
-                navigate('/home');
+                navigate('/');
             }
         });
     });

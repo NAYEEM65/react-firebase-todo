@@ -34,14 +34,14 @@ const Register = () => {
         }
         createUserWithEmailAndPassword(auth, registerInfo.email, registerInfo.password)
             .then(() => {
-                navigate('/home'); //home
+                navigate('/'); //home
             })
             .catch((err) => console.log(err.message));
     };
     useEffect(() => {
         auth.onAuthStateChanged((user) => {
             if (user) {
-                navigate('/home'); //home
+                navigate('/'); //home
             }
         });
     });
@@ -136,7 +136,7 @@ const Register = () => {
                             <div className="mt-5 mb-3 text-left flex justify-start items-center gap-1 w-full">
                                 <p className="text-xs">
                                     have an Account?{' '}
-                                    <Link to="/" className="text-blue-600">
+                                    <Link to="/login" className="text-blue-600">
                                         Sign in.
                                     </Link>
                                 </p>
